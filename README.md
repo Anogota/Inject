@@ -53,3 +53,29 @@ Then change request method to POST, write ```spring.cloud.function.routing-expre
 And when you change everything insert this in intercept packiet in burp. and you got a shell
 
 ![image](https://github.com/Anogota/Inject/assets/143951834/bdee2cff-e1c1-4522-a53c-203650feadbf)
+
+I little bit upgrade my shell.
+
+![image](https://github.com/Anogota/Inject/assets/143951834/1692aed0-8fbf-4274-8f39-265d97b4a5c8)
+
+I did some recon on the machine and i found intresting file in /home/frank/.m2
+```
+	<id>Inject</id>
+      	<username>phil</username>
+      	<password>DocPhillovestoInject123</password>
+	<privateKey>${user.home}/.ssh/id_dsa</privateKey>
+      	<filePermissions>660</filePermissions>
+      	<directoryPermissions>660</directoryPermissions>
+      	<configuration></configuration>
+```
+Now we can log in as phil by command: su phil 
+And in his directory we can find, user.txt.
+Now let's focus on priv esc root. I can't find anything intresting by command sudo -l, /etc/crontab /etc/shadow i download on machine LinEnum but still nothing and i decid to download pspy.
+And i found /bin/sh -c /usr/local/bin/ansible-parallel /opt/automation/tasks/*.yml all script with .yml run as root, let's create a shell, and get a root.
+Step to get a root: cd /opt/automation/task and create playbook_2.yml by vi playbook_2.yml, here's the script:
+
+![image](https://github.com/Anogota/Inject/assets/143951834/2c2fb6ec-af52-4ad3-b316-b0b92671859c)
+
+And we did, we got the root!
+
+![image](https://github.com/Anogota/Inject/assets/143951834/4bbd6726-8d96-4fc9-bbd4-99f34ec38819)
