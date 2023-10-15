@@ -39,3 +39,5 @@ Now we know what kind of version working on the server, this is a:
 		<version>2.6.5</version>
 ```
 Let's search something about it, maybe we will find CVE for this verion.
+I will show two ways, how get a reverse shell.
+First will be msfconsole. This is a module what's give you a reverse-shell: ```exploit/multi/http/spring_cloud_function_spel_injection``` 
