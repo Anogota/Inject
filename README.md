@@ -40,4 +40,8 @@ Now we know what kind of version working on the server, this is a:
 ```
 Let's search something about it, maybe we will find CVE for this verion.
 I will show two ways, how get a reverse shell.
-First will be msfconsole. This is a module what's give you a reverse-shell: ```exploit/multi/http/spring_cloud_function_spel_injection``` 
+First will be msfconsole. This is a module what's give you a reverse-shell: ```exploit/multi/http/spring_cloud_function_spel_injection``` This is a way for noob, by this you don't learn anything.
+
+![image](https://github.com/Anogota/Inject/assets/143951834/747fb917-4fd0-4e6d-b177-8960e5ca1ce1)
+
+And you get a shell, let's now do secend way.
